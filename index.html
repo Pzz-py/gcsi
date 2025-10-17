@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>pz — Futuristic Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="img/logo.svg" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="img/logo.svg" alt="pz logo" class="logo">
+      <h1>pz</h1>
+    </div>
+    <nav class="nav">
+      <a href="#projects">Projetos</a>
+      <a href="#skills">Habilidades</a>
+      <a href="#contact">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <h2>Design & Desenvolvimento Futurista</h2>
+        <p>Construindo experiências digitais que parecem vir do amanhã — interfaces limpas, interações inteligentes e performance que impressiona.</p>
+        <div class="cta">
+          <a class="btn" href="#projects">Ver Projetos</a>
+          <a class="btn ghost" href="#contact">Trabalhe comigo</a>
+        </div>
+      </div>
+      <img src="img/bg.svg" class="hero-art" alt="">
+    </section>
+
+    <section id="projects" class="projects">
+      <h3>Projetos Recentes</h3>
+      <div class="grid">
+        <article class="card">
+          <img src="img/project1.svg" alt="Projeto 1">
+          <div class="card-body">
+            <h4>Interface Neural</h4>
+            <p>Dashboard de visualização de dados em tempo real com painel de controle por gestos.</p>
+            <a class="link" href="#">Detalhes →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="img/project2.svg" alt="Projeto 2">
+          <div class="card-body">
+            <h4>Simulação Óptica</h4>
+            <p>Experiência interativa para demonstrar algoritmos de renderização e luz dinâmica.</p>
+            <a class="link" href="#">Detalhes →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="img/project1.svg" alt="Projeto 3">
+          <div class="card-body">
+            <h4>Sistema Autônomo</h4>
+            <p>Prototipagem de um assistente que antecipa necessidades do usuário usando ML leve.</p>
+            <a class="link" href="#">Detalhes →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="skills">
+      <h3>Habilidades</h3>
+      <ul class="chips">
+        <li>WebGL & Three.js</li>
+        <li>Design Systems</li>
+        <li>TypeScript</li>
+        <li>AI Integration</li>
+        <li>Performance & Accessibility</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="contact">
+      <h3>Contato</h3>
+      <p>Interessado em colaborar? Envie um e‑mail para <a href="mailto:contato@pz.dev">contato@pz.dev</a> ou use o formulário abaixo.</p>
+      <form class="contact-form" action="#" onsubmit="alert('Formulário de demonstração — substitua a ação por backend real.'); return false;">
+        <input type="text" placeholder="Seu nome" required>
+        <input type="email" placeholder="Seu e‑mail" required>
+        <textarea placeholder="Mensagem" rows="4" required></textarea>
+        <button class="btn">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> pz — Futuristic Portfolio. Crafted with ✨ and a little bit of neon.</p>
+  </footer>
+
+  <script>
+    // Small script to set year and add subtle interaction
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // add simple reveal on scroll
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => e.target.classList.toggle('inview', e.isIntersecting));
+    }, {threshold: 0.12});
+    document.querySelectorAll('.card, .skills, .hero-inner, .contact').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
